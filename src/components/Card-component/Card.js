@@ -1,24 +1,33 @@
 import React from 'react';
-import styles from './Card.module.css';
-import katieZaferes from '../../images/katie-zaferes.png';
 import star from '../../images/star.png';
+import styles from './Card.module.css';
 
-const Card = () => (
-  <section>
+const Card = (props) => {
+  let badgeText
+  if (props.openSpots === 0) {
+    badgeText = "SOLD OUT"
+  } else if (props.location === "Online") {
+    badgeText = "ONLINE"
+  }
+
+
+  return (
     <div className={styles.Card}>
-      <img src={katieZaferes} alt="swim" className="card-image" />
-      <div className="card-stats">
-        <img src={star} alt="start" className="card-star" />
-        <span>5.0</span>
-        <span className="gray">(6) • </span>
-        <span className="gray">USA</span>
+      <div className="card">
+        {props.openSpots === 0 && <div className="card-badge">SOLD OUT</div>}
+        <img src={props.img} alt="png" className="card-image" />
+        <div className="card-stats">
+          <img src={star} alt="star" className="card-star" />
+          <span>{props.rating}</span>
+          <span className="gray">({props.reviewCount}) • </span>
+          <span className="gray">{props.country}</span>
+        </div>
+        <p>{props.title}</p>
+        <p><span className="bold">From ${props.price}</span> / person</p>
       </div>
-      <p>Life Lessons with Katie Zaferes</p>
-      <p><span className="bold">From $136</span> / person</p>
-
     </div>
-  </section>
 
-);
+  )
+}
 
 export default Card;
