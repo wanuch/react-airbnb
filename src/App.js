@@ -9,13 +9,13 @@ function App() {
   const cards = data.map(item => {
     return (
       <Card
-        img={item.coverImg}
-        rating={item.stats.rating}
-        reviewCount={item.stats.reviewCount}
-        location={item.location}
-        title={item.title}
-        price={item.price}
-        openSpots={item.openSpots}
+        key={item.id}
+
+        // object props (Need to add item.{fieldname} to use at desination)
+        // item={item}
+
+        // spead props
+        {...item}
       />
     )
   })

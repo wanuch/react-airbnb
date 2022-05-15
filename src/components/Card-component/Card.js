@@ -14,19 +14,18 @@ const Card = (props) => {
   return (
     <div className={styles.Card}>
       <div className="card">
-        {props.openSpots === 0 && <div className="card-badge">SOLD OUT</div>}
-        <img src={props.img} alt="png" className="card-image" />
+        {badgeText && <div className="card-badge">{badgeText}</div>}
+        <img src={props.coverImg} alt="png" className="card-image" />
         <div className="card-stats">
           <img src={star} alt="star" className="card-star" />
-          <span>{props.rating}</span>
-          <span className="gray">({props.reviewCount}) • </span>
-          <span className="gray">{props.country}</span>
+          <span>{props.stats.rating}</span>
+          <span className="gray">({props.stats.reviewCount}) • </span>
+          <span className="gray">{props.location}</span>
         </div>
-        <p>{props.title}</p>
-        <p><span className="bold">From ${props.price}</span> / person</p>
+        <p className="card-title">{props.title}</p>
+        <p className="card-price"><span className="bold">From ${props.price}</span> / person</p>
       </div>
     </div>
-
   )
 }
 

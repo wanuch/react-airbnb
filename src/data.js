@@ -2,7 +2,7 @@ import p1 from "./images/katie-zaferes.png";
 import p2 from "./images/wedding-photography.png";
 import p3 from "./images/mountain-bike.png";
 
-export default [
+const data = [
     {
         id: 1,
         title: "Life Lessons with Katie Zaferes",
@@ -43,3 +43,5 @@ export default [
         openSpots: 3,
     }
 ]
+
+export default data;
