@@ -4,7 +4,7 @@ import Content from './components/Content-component/Content';
 import Header from './components/Header-component/Header';
 import data from "./data"
 
-function App() {
+const App = () => {
 
   const cards = data.map(item => {
     return (
